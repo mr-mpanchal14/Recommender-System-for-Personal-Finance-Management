@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}All Prediction{% endblock %}
+
+{% block body  %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Education</th>
+                    <th scope="col">Income</th>
+                    <th scope="col">Fees</th>
+                    <th scope="col">Prediction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in final_predictions %}
+                  <tr>
+                    <th scope="row">{{ data.name }}</th>
+                    <td>{{ data.age }}</td>
+                    <td>{{ data.gender }}</td>
+                    <td>{{ data.education}}</td>
+                    <td>{{ data.income}}</td>
+                    <td>{{ data.fees}}</td>
+                    <td>{{ data.predictions }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}
